@@ -1,0 +1,207 @@
+/* MenuPage.css */
+.menu-container {
+  font-family: "Noto Sans Hebrew", sans-serif;
+  background-color: black;
+  color: white;
+  animation: fadeIn 1s ease-out;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+
+.header-video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  animation: slideIn 2s ease-out;
+}
+
+.header-overlay-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: pulse 2s infinite;
+}
+
+.menu-notes {
+  margin: 6%;
+  display: flex;
+  width: 80%;
+  font-size: 1.2rem;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 2%;
+}
+
+.menu-notes p {
+  margin: 2%;
+  text-align: right;
+  justify-content: center;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.categories button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.categories button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.menu-content {
+  padding: 20px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-item-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.menu-item-details {
+  padding: 10px;
+}
+
+.menu-item-name {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.menu-item-price {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    align-items: center; /* מרכז את התוכן אנכית */
+    justify-content: center; /* מרכז את התוכן אופקית */
+    position: relative;
+    text-align: center;
+  }
+
+  .header-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .header-overlay-menu {
+    display: flex;
+    justify-content: center; /* מרכז את התוכן אופקית */
+    align-items: center; /* מרכז את התוכן אנכית */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: absolute;
+  }
+
+  .header-title {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+  }
+}
+
+.categories button:focus {
+  outline: 3px solid #aaa;
+  outline-offset: 2px;
+}

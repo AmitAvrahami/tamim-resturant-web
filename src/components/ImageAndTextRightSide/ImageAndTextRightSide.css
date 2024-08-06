@@ -1,0 +1,132 @@
+/* ImageAndTextRightSide.css */
+.image-and-text-rightside-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  color: white;
+  transform: translateY(100px); /* התזוזה של כל התוכן ימינה */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* זמן האנימציה */
+}
+
+.image-and-text-rightside-container.animate {
+  opacity: 1;
+  transform: translateX(0); /* התזוזה של כל התוכן למיקום המקורי */
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: auto;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.text-container {
+  width: 100%;
+  padding: 0 10%;
+  font-family: "Noto Sans Hebrew", sans-serif;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: end;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(-50px); /* התזוזה של h2 מלמעלה */
+  transition: opacity 2s ease-out, transform 2s ease-out; /* זמן האנימציה */
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  max-width: 100%;
+  width: auto;
+  color: #ffffff;
+  text-align: end;
+  opacity: 0;
+  transform: translateY(50px); /* התזוזה של p מלמטה */
+  transition: opacity 2s ease-out, transform 2s ease-out; /* זמן האנימציה */
+}
+
+.text-container h2.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-container p.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-container-right-side {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-container-right-side button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: "Noto Sans Hebrew", sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-container-right-side button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.btn-container-right-side button:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+  .image-and-text-rightside-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .image-container,
+  .text-container {
+    width: 100%;
+  }
+
+  .text-container {
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+
+  .image-container {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-container {
+    order: 1;
+  }
+
+  .text-container {
+    order: 2;
+    text-align: center;
+  }
+}

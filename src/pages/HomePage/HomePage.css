@@ -1,0 +1,28 @@
+body {
+  background-color: black;
+  color: white; /* לשנות צבע טקסט כדי שיהיה קריא על רקע שחור */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.spacer {
+  border: 1px solid rgb(255, 255, 255);
+  margin: 2% 0 0 0;
+}
+
+.home-page-container {
+  background-color: black;
+}
+
+@media (min-width: 769px) {
+  .nav-menu-mini {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+}

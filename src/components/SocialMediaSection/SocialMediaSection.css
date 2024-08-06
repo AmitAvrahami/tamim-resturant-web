@@ -1,0 +1,45 @@
+.social-media-section {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.social-button {
+  background: none;
+  border: none;
+  color: yellow;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.social-button:hover {
+  color: lightyellow;
+}
+
+.follow-us {
+  margin-top: 20px;
+}
+
+.follow-us h2 {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: yellow;
+  font-size: 2rem;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: lightyellow;
+}

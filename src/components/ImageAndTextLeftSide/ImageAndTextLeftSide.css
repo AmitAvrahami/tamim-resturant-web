@@ -1,0 +1,129 @@
+/* ImageAndTextLeftSide.css */
+.image-and-text-leftside-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.image-and-text-leftside-container.animate {
+  opacity: 1;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 7% 0;
+}
+
+.image-container img {
+  width: auto;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.text-container {
+  width: 100%;
+  padding: 20px;
+  font-family: "Noto Sans Hebrew", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-50px); /* התזוזה של h2 מלמעלה */
+  transition: opacity 3s ease-out, transform 3s ease-out;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px); /* התזוזה של p מלמטה */
+  transition: opacity 7s ease-out, transform 7s ease-out;
+}
+
+.text-container h2.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-container p.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-container-left-side {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-container-left-side button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: "Noto Sans Hebrew", sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-container-left-side button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.btn-container-left-side button:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+  .image-and-text-leftside-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .image-container,
+  .text-container {
+    width: 50%;
+  }
+
+  .text-container {
+    align-items: flex-start;
+    margin-top: 10%;
+    margin-right: 10%;
+  }
+
+  .image-container {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-container {
+    order: 1;
+    width: 50%;
+    margin: 0;
+  }
+
+  .text-container {
+    order: 2;
+    text-align: center;
+  }
+}
